@@ -31,12 +31,11 @@ class postmanEcho {
                 .then()
                 .statusCode(200)
                 .body("args.foo1", equalTo("bar1"))
-                .headers("content-length", "392")
         ;
     }
 
     @Test
-    void shouldTestGetArgsFoo2ValueCrush() {
+    void shouldTestGetArgsFoo2Value() {
         given()
                 .baseUri("https://postman-echo.com")
                 .contentType("text/plain; charset=UTF-8")
@@ -45,7 +44,7 @@ class postmanEcho {
                 .get("/get?foo1=bar1&foo2=bar2")
                 .then()
                 .statusCode(200)
-                .body("args.foo2", equalTo("bar1"))
+                .body("args.foo2", equalTo("bar2"))
         ;
     }
 
@@ -71,7 +70,8 @@ class postmanEcho {
                 .get("/headers")
                 .then()
                 .statusCode(200)
-                .headers("Content-Length", "255");
+                .headers("Connection", "keep-alive",
+                        "Content-Type", "application/json; charset=utf-8");
 
     }
 }
