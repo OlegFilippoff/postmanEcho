@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.jupiter.api.Test;
 
-public class postManEcho {
+class postmanEcho {
 
     @Test
     void shouldTestSomeData() {
