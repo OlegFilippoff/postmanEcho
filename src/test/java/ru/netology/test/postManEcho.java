@@ -86,6 +86,7 @@ class postmanEcho {
 
                 .then()
                 .statusCode(200)
+                .body("authenticated", equalTo(true))
                 ;
 
     }
